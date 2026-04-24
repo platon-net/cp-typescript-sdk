@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { Time200ResponseData } from 'cp-typescript-sdk';
+import { Time200ResponseData } from '@platon-net/cp-typescript-sdk';
 
 const instance: Time200ResponseData = {
     datetime,

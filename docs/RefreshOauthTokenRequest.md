@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RefreshOauthTokenRequest } from 'cp-typescript-sdk';
+import { RefreshOauthTokenRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: RefreshOauthTokenRequest = {
     token,

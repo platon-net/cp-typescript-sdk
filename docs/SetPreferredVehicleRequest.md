@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { SetPreferredVehicleRequest } from 'cp-typescript-sdk';
+import { SetPreferredVehicleRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: SetPreferredVehicleRequest = {
     vehicleId,

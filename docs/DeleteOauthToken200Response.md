@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { DeleteOauthToken200Response } from 'cp-typescript-sdk';
+import { DeleteOauthToken200Response } from '@platon-net/cp-typescript-sdk';
 
 const instance: DeleteOauthToken200Response = {
     status,

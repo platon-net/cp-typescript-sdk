@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { FinalizeVehicleEventRequestMoney } from 'cp-typescript-sdk';
+import { FinalizeVehicleEventRequestMoney } from '@platon-net/cp-typescript-sdk';
 
 const instance: FinalizeVehicleEventRequestMoney = {
     total,

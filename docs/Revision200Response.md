@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { Revision200Response } from 'cp-typescript-sdk';
+import { Revision200Response } from '@platon-net/cp-typescript-sdk';
 
 const instance: Revision200Response = {
     status,

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GetDnsRecords200ResponseData } from 'cp-typescript-sdk';
+import { GetDnsRecords200ResponseData } from '@platon-net/cp-typescript-sdk';
 
 const instance: GetDnsRecords200ResponseData = {
     domain_id,

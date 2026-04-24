@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RenewDomainRequest } from 'cp-typescript-sdk';
+import { RenewDomainRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: RenewDomainRequest = {
     period,

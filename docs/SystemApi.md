@@ -18,7 +18,7 @@ All URIs are relative to *https://setup.platon.sk/api*
 import {
     SystemApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new SystemApi(configuration);
@@ -61,7 +61,7 @@ No authorization required
 import {
     SystemApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new SystemApi(configuration);
@@ -104,7 +104,7 @@ No authorization required
 import {
     SystemApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new SystemApi(configuration);

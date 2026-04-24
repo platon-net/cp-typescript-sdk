@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { RegisterDomainRequest } from 'cp-typescript-sdk';
+import { RegisterDomainRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: RegisterDomainRequest = {
     cname,

@@ -21,7 +21,7 @@ import {
     OAuthApi,
     Configuration,
     CreateOauthRequestRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new OAuthApi(configuration);
@@ -71,7 +71,7 @@ No authorization required
 import {
     OAuthApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new OAuthApi(configuration);
@@ -121,7 +121,7 @@ const { status, data } = await apiInstance.deleteOauthToken(
 import {
     OAuthApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new OAuthApi(configuration);
@@ -165,7 +165,7 @@ import {
     OAuthApi,
     Configuration,
     RefreshOauthTokenRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new OAuthApi(configuration);
@@ -215,7 +215,7 @@ const { status, data } = await apiInstance.refreshOauthToken(
 import {
     OAuthApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new OAuthApi(configuration);

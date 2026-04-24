@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { UpdateDnsRecordRequest } from 'cp-typescript-sdk';
+import { UpdateDnsRecordRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: UpdateDnsRecordRequest = {
     name,

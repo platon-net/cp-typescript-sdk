@@ -22,7 +22,7 @@ import {
     DomainApi,
     Configuration,
     ChangeDomainNameserversRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);
@@ -75,7 +75,7 @@ const { status, data } = await apiInstance.changeDomainNameservers(
 import {
     DomainApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);
@@ -128,7 +128,7 @@ const { status, data } = await apiInstance.closeDomain(
 import {
     DomainApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);
@@ -181,7 +181,7 @@ const { status, data } = await apiInstance.getDomainInfo(
 import {
     DomainApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);
@@ -232,7 +232,7 @@ import {
     DomainApi,
     Configuration,
     RegisterDomainRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);
@@ -286,7 +286,7 @@ import {
     DomainApi,
     Configuration,
     RenewDomainRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DomainApi(configuration);

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { FinalizeVehicleEventRequestFueling } from 'cp-typescript-sdk';
+import { FinalizeVehicleEventRequestFueling } from '@platon-net/cp-typescript-sdk';
 
 const instance: FinalizeVehicleEventRequestFueling = {
     fuelingNo,

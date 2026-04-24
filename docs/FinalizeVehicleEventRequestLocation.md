@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { FinalizeVehicleEventRequestLocation } from 'cp-typescript-sdk';
+import { FinalizeVehicleEventRequestLocation } from '@platon-net/cp-typescript-sdk';
 
 const instance: FinalizeVehicleEventRequestLocation = {
     addressText,

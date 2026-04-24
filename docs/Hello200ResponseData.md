@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { Hello200ResponseData } from 'cp-typescript-sdk';
+import { Hello200ResponseData } from '@platon-net/cp-typescript-sdk';
 
 const instance: Hello200ResponseData = {
     message,

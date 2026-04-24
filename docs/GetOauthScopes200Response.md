@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GetOauthScopes200Response } from 'cp-typescript-sdk';
+import { GetOauthScopes200Response } from '@platon-net/cp-typescript-sdk';
 
 const instance: GetOauthScopes200Response = {
     status,

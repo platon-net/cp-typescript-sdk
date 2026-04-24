@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ChangeMailboxPasswordRequest } from 'cp-typescript-sdk';
+import { ChangeMailboxPasswordRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: ChangeMailboxPasswordRequest = {
     password,

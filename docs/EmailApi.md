@@ -18,7 +18,7 @@ import {
     EmailApi,
     Configuration,
     ChangeMailboxPasswordRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EmailApi(configuration);
@@ -75,7 +75,7 @@ import {
     EmailApi,
     Configuration,
     CreateMailboxRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new EmailApi(configuration);

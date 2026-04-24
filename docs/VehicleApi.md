@@ -27,7 +27,7 @@ import {
     VehicleApi,
     Configuration,
     CreateVehicleEventRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -77,7 +77,7 @@ const { status, data } = await apiInstance.createVehicleEvent(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -128,7 +128,7 @@ import {
     VehicleApi,
     Configuration,
     FinalizeVehicleEventRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -181,7 +181,7 @@ const { status, data } = await apiInstance.finalizeVehicleEvent(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -231,7 +231,7 @@ const { status, data } = await apiInstance.getVehicleEvent(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -284,7 +284,7 @@ const { status, data } = await apiInstance.getVehicleEventImage(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -327,7 +327,7 @@ This endpoint does not have any parameters.
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -377,7 +377,7 @@ const { status, data } = await apiInstance.listVehicleEvents(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -420,7 +420,7 @@ This endpoint does not have any parameters.
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -480,7 +480,7 @@ import {
     VehicleApi,
     Configuration,
     SetPreferredVehicleRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);
@@ -530,7 +530,7 @@ const { status, data } = await apiInstance.setPreferredVehicle(
 import {
     VehicleApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new VehicleApi(configuration);

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { GetOauthScopes200ResponseDataInner } from 'cp-typescript-sdk';
+import { GetOauthScopes200ResponseDataInner } from '@platon-net/cp-typescript-sdk';
 
 const instance: GetOauthScopes200ResponseDataInner = {
     name,

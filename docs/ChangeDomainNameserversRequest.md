@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ChangeDomainNameserversRequest } from 'cp-typescript-sdk';
+import { ChangeDomainNameserversRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: ChangeDomainNameserversRequest = {
     cname,

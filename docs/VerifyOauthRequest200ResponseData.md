@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { VerifyOauthRequest200ResponseData } from 'cp-typescript-sdk';
+import { VerifyOauthRequest200ResponseData } from '@platon-net/cp-typescript-sdk';
 
 const instance: VerifyOauthRequest200ResponseData = {
     status,

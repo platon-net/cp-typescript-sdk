@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { ListDomains200Response } from 'cp-typescript-sdk';
+import { ListDomains200Response } from '@platon-net/cp-typescript-sdk';
 
 const instance: ListDomains200Response = {
     status,

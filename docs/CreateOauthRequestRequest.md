@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CreateOauthRequestRequest } from 'cp-typescript-sdk';
+import { CreateOauthRequestRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: CreateOauthRequestRequest = {
     app_name,

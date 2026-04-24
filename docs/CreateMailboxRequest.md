@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CreateMailboxRequest } from 'cp-typescript-sdk';
+import { CreateMailboxRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: CreateMailboxRequest = {
     username,

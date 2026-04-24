@@ -20,7 +20,7 @@ import {
     DNSApi,
     Configuration,
     CreateDnsRecordRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSApi(configuration);
@@ -73,7 +73,7 @@ const { status, data } = await apiInstance.createDnsRecord(
 import {
     DNSApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSApi(configuration);
@@ -126,7 +126,7 @@ const { status, data } = await apiInstance.deleteDnsRecord(
 import {
     DNSApi,
     Configuration
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSApi(configuration);
@@ -180,7 +180,7 @@ import {
     DNSApi,
     Configuration,
     UpdateDnsRecordRequest
-} from 'cp-typescript-sdk';
+} from '@platon-net/cp-typescript-sdk';
 
 const configuration = new Configuration();
 const apiInstance = new DNSApi(configuration);

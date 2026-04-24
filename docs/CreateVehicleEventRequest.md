@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { CreateVehicleEventRequest } from 'cp-typescript-sdk';
+import { CreateVehicleEventRequest } from '@platon-net/cp-typescript-sdk';
 
 const instance: CreateVehicleEventRequest = {
     eventType,

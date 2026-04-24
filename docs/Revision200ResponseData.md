@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```typescript
-import { Revision200ResponseData } from 'cp-typescript-sdk';
+import { Revision200ResponseData } from '@platon-net/cp-typescript-sdk';
 
 const instance: Revision200ResponseData = {
     revision,
