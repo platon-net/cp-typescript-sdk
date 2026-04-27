@@ -2,6 +2,7 @@
 .npmignore
 README.md
 api.ts
+api/cart-api.ts
 api/dnsapi.ts
 api/domain-api.ts
 api/email-api.ts
@@ -11,8 +12,11 @@ api/vehicle-api.ts
 base.ts
 common.ts
 configuration.ts
+docs/CartApi.md
 docs/ChangeDomainNameserversRequest.md
 docs/ChangeMailboxPasswordRequest.md
+docs/CheckCartCouponRequest.md
+docs/CreateCartItemRequest.md
 docs/CreateDnsRecord200Response.md
 docs/CreateDnsRecordRequest.md
 docs/CreateMailboxRequest.md
@@ -48,6 +52,9 @@ docs/SetPreferredVehicleRequest.md
 docs/SystemApi.md
 docs/Time200Response.md
 docs/Time200ResponseData.md
+docs/UpdateCartItemCountRequest.md
+docs/UpdateCartItemRequest.md
+docs/UpdateCartItemRequestData.md
 docs/UpdateDnsRecordRequest.md
 docs/VehicleApi.md
 docs/VerifyOauthRequest200Response.md
@@ -56,6 +63,8 @@ git_push.sh
 index.ts
 models/change-domain-nameservers-request.ts
 models/change-mailbox-password-request.ts
+models/check-cart-coupon-request.ts
+models/create-cart-item-request.ts
 models/create-dns-record-request.ts
 models/create-dns-record200-response.ts
 models/create-mailbox-request.ts
@@ -87,6 +96,9 @@ models/revision200-response.ts
 models/set-preferred-vehicle-request.ts
 models/time200-response-data.ts
 models/time200-response.ts
+models/update-cart-item-count-request.ts
+models/update-cart-item-request-data.ts
+models/update-cart-item-request.ts
 models/update-dns-record-request.ts
 models/verify-oauth-request200-response-data.ts
 models/verify-oauth-request200-response.ts

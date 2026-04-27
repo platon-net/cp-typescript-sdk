@@ -1,5 +1,7 @@
 export * from './change-domain-nameservers-request';
 export * from './change-mailbox-password-request';
+export * from './check-cart-coupon-request';
+export * from './create-cart-item-request';
 export * from './create-dns-record200-response';
 export * from './create-dns-record-request';
 export * from './create-mailbox-request';
@@ -30,6 +32,9 @@ export * from './revision200-response-data';
 export * from './set-preferred-vehicle-request';
 export * from './time200-response';
 export * from './time200-response-data';
+export * from './update-cart-item-count-request';
+export * from './update-cart-item-request';
+export * from './update-cart-item-request-data';
 export * from './update-dns-record-request';
 export * from './verify-oauth-request200-response';
 export * from './verify-oauth-request200-response-data';

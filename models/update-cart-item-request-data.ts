@@ -14,11 +14,11 @@
 
 
 
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface UpdateCartItemRequestData {
+    'product_name'?: string;
+    'product_detail'?: string;
+    'item_count'?: number;
+    'price'?: number;
+    'product_price'?: number;
+}
 
