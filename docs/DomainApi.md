@@ -10,6 +10,7 @@ All URIs are relative to *https://setup.platon.sk/api*
 |[**listDomains**](#listdomains) | **GET** /domains | List customer domains|
 |[**registerDomain**](#registerdomain) | **POST** /domains/{domain}/register | Register domain|
 |[**renewDomain**](#renewdomain) | **POST** /domains/{domain}/renew | Renew domain|
+|[**whoisDomain**](#whoisdomain) | **GET** /domains/{domain}/whois | Check domain WHOIS availability and prices|
 
 # **changeDomainNameservers**
 > CreateDnsRecord200Response changeDomainNameservers(changeDomainNameserversRequest)
@@ -326,6 +327,62 @@ const { status, data } = await apiInstance.renewDomain(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Domain renew response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **whoisDomain**
+> WhoisDomain200Response whoisDomain()
+
+
+### Example
+
+```typescript
+import {
+    DomainApi,
+    Configuration
+} from '@platon-net/cp-typescript-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new DomainApi(configuration);
+
+let domain: string; //Domain name (default to undefined)
+let cname: string; //Customer name for price context (optional) (default to undefined)
+let currencyId: string; //Currency ID (optional) (default to undefined)
+
+const { status, data } = await apiInstance.whoisDomain(
+    domain,
+    cname,
+    currencyId
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **domain** | [**string**] | Domain name | defaults to undefined|
+| **cname** | [**string**] | Customer name for price context | (optional) defaults to undefined|
+| **currencyId** | [**string**] | Currency ID | (optional) defaults to undefined|
+
+
+### Return type
+
+**WhoisDomain200Response**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Domain WHOIS response |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

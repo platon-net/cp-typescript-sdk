@@ -13,14 +13,15 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { MergeCartItems200ResponseData } from './merge-cart-items200-response-data';
 
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface MergeCartItems200Response {
+    'status': string;
+    'retval': number;
+    'msg': string;
+    'data': MergeCartItems200ResponseData;
+    'requestId': number;
+}
 

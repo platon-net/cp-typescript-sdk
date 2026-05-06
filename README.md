@@ -45,12 +45,26 @@ _unPublished (not recommended):_
 npm install PATH_TO_GENERATED_PACKAGE --save
 ```
 
+### API Base URL
+
+The default API base URL is `https://setup.platon.sk/api`. To set it explicitly:
+
+```ts
+import { Configuration } from '@platon-net/cp-typescript-sdk';
+
+const config = new Configuration({
+  accessToken: 'YOUR_ACCESS_TOKEN',
+  basePath: 'https://setup.platon.sk/api',
+});
+```
+
 ### Documentation for API Endpoints
 
 All URIs are relative to *https://setup.platon.sk/api*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AuthApi* | [**createAuthToken**](docs/AuthApi.md#createauthtoken) | **POST** /auth/token | Create anonymous auth token
 *CartApi* | [**checkCartCoupon**](docs/CartApi.md#checkcartcoupon) | **POST** /cart/coupons/check | Check and apply cart coupon
 *CartApi* | [**createCartItem**](docs/CartApi.md#createcartitem) | **POST** /cart/items | Add item to cart
 *CartApi* | [**deleteCartItem**](docs/CartApi.md#deletecartitem) | **DELETE** /cart/items/{cartItemId} | Remove item from cart
@@ -58,6 +72,7 @@ Class | Method | HTTP request | Description
 *CartApi* | [**getCartCoupon**](docs/CartApi.md#getcartcoupon) | **GET** /cart/coupons/current | Get current cart coupon
 *CartApi* | [**getCartTotal**](docs/CartApi.md#getcarttotal) | **GET** /cart/total | Get cart total
 *CartApi* | [**listCartItems**](docs/CartApi.md#listcartitems) | **GET** /cart/items | List cart items
+*CartApi* | [**mergeCartItems**](docs/CartApi.md#mergecartitems) | **POST** /cart/items/merge | Merge anonymous cart items into current customer cart
 *CartApi* | [**updateCartItem**](docs/CartApi.md#updatecartitem) | **PATCH** /cart/items/{cartItemId} | Update cart item data
 *CartApi* | [**updateCartItemCount**](docs/CartApi.md#updatecartitemcount) | **PATCH** /cart/items/by-product/count | Update cart item count by product and domain
 *DNSApi* | [**createDnsRecord**](docs/DNSApi.md#creatednsrecord) | **POST** /dns/{domain}/records | Create DNS record
@@ -70,8 +85,10 @@ Class | Method | HTTP request | Description
 *DomainApi* | [**listDomains**](docs/DomainApi.md#listdomains) | **GET** /domains | List customer domains
 *DomainApi* | [**registerDomain**](docs/DomainApi.md#registerdomain) | **POST** /domains/{domain}/register | Register domain
 *DomainApi* | [**renewDomain**](docs/DomainApi.md#renewdomain) | **POST** /domains/{domain}/renew | Renew domain
+*DomainApi* | [**whoisDomain**](docs/DomainApi.md#whoisdomain) | **GET** /domains/{domain}/whois | Check domain WHOIS availability and prices
 *EmailApi* | [**changeMailboxPassword**](docs/EmailApi.md#changemailboxpassword) | **PATCH** /email/{domain}/mailboxes/{username}/password | Change mailbox password
 *EmailApi* | [**createMailbox**](docs/EmailApi.md#createmailbox) | **POST** /email/{domain}/mailboxes | Create mailbox
+*LLMApi* | [**spamDetection**](docs/LLMApi.md#spamdetection) | **POST** /llm/spam-detection | Classify a web form message as spam or ham using the local LLM
 *OAuthApi* | [**createOauthRequest**](docs/OAuthApi.md#createoauthrequest) | **POST** /oauth/requests | Create OAuth request
 *OAuthApi* | [**deleteOauthToken**](docs/OAuthApi.md#deleteoauthtoken) | **DELETE** /oauth/tokens | Delete OAuth token
 *OAuthApi* | [**getOauthScopes**](docs/OAuthApi.md#getoauthscopes) | **GET** /oauth/scopes | List available OAuth scopes
@@ -98,6 +115,8 @@ Class | Method | HTTP request | Description
  - [ChangeDomainNameserversRequest](docs/ChangeDomainNameserversRequest.md)
  - [ChangeMailboxPasswordRequest](docs/ChangeMailboxPasswordRequest.md)
  - [CheckCartCouponRequest](docs/CheckCartCouponRequest.md)
+ - [CreateAuthToken200Response](docs/CreateAuthToken200Response.md)
+ - [CreateAuthToken200ResponseData](docs/CreateAuthToken200ResponseData.md)
  - [CreateCartItemRequest](docs/CreateCartItemRequest.md)
  - [CreateDnsRecord200Response](docs/CreateDnsRecord200Response.md)
  - [CreateDnsRecordRequest](docs/CreateDnsRecordRequest.md)
@@ -121,12 +140,18 @@ Class | Method | HTTP request | Description
  - [Hello200ResponseData](docs/Hello200ResponseData.md)
  - [ListDomains200Response](docs/ListDomains200Response.md)
  - [ListDomains200ResponseData](docs/ListDomains200ResponseData.md)
+ - [MergeCartItems200Response](docs/MergeCartItems200Response.md)
+ - [MergeCartItems200ResponseData](docs/MergeCartItems200ResponseData.md)
+ - [MergeCartItemsRequest](docs/MergeCartItemsRequest.md)
  - [RefreshOauthTokenRequest](docs/RefreshOauthTokenRequest.md)
  - [RegisterDomainRequest](docs/RegisterDomainRequest.md)
  - [RenewDomainRequest](docs/RenewDomainRequest.md)
  - [Revision200Response](docs/Revision200Response.md)
  - [Revision200ResponseData](docs/Revision200ResponseData.md)
  - [SetPreferredVehicleRequest](docs/SetPreferredVehicleRequest.md)
+ - [SpamDetection200Response](docs/SpamDetection200Response.md)
+ - [SpamDetection200ResponseData](docs/SpamDetection200ResponseData.md)
+ - [SpamDetectionRequest](docs/SpamDetectionRequest.md)
  - [Time200Response](docs/Time200Response.md)
  - [Time200ResponseData](docs/Time200ResponseData.md)
  - [UpdateCartItemCountRequest](docs/UpdateCartItemCountRequest.md)
@@ -135,6 +160,9 @@ Class | Method | HTTP request | Description
  - [UpdateDnsRecordRequest](docs/UpdateDnsRecordRequest.md)
  - [VerifyOauthRequest200Response](docs/VerifyOauthRequest200Response.md)
  - [VerifyOauthRequest200ResponseData](docs/VerifyOauthRequest200ResponseData.md)
+ - [WhoisDomain200Response](docs/WhoisDomain200Response.md)
+ - [WhoisDomain200ResponseData](docs/WhoisDomain200ResponseData.md)
+ - [WhoisDomain200ResponseDataRetval](docs/WhoisDomain200ResponseDataRetval.md)
 
 
 <a id="documentation-for-authorization"></a>

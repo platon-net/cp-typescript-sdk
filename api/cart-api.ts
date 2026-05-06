@@ -28,6 +28,10 @@ import type { CreateCartItemRequest } from '../models';
 // @ts-ignore
 import type { CreateDnsRecord200Response } from '../models';
 // @ts-ignore
+import type { MergeCartItems200Response } from '../models';
+// @ts-ignore
+import type { MergeCartItemsRequest } from '../models';
+// @ts-ignore
 import type { UpdateCartItemCountRequest } from '../models';
 // @ts-ignore
 import type { UpdateCartItemRequest } from '../models';
@@ -320,6 +324,45 @@ export const CartApiAxiosParamCreator = function (configuration?: Configuration)
         },
         /**
          * 
+         * @summary Merge anonymous cart items into current customer cart
+         * @param {MergeCartItemsRequest} mergeCartItemsRequest Anonymous cart merge payload
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        mergeCartItems: async (mergeCartItemsRequest: MergeCartItemsRequest, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'mergeCartItemsRequest' is not null or undefined
+            assertParamExists('mergeCartItems', 'mergeCartItemsRequest', mergeCartItemsRequest)
+            const localVarPath = `/cart/items/merge`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            localVarHeaderParameter['Content-Type'] = 'application/json';
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+            localVarRequestOptions.data = serializeDataIfNeeded(mergeCartItemsRequest, localVarRequestOptions, configuration)
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * 
          * @summary Update cart item data
          * @param {number} cartItemId Cart item ID
          * @param {UpdateCartItemRequest} updateCartItemRequest Cart item update payload
@@ -504,6 +547,19 @@ export const CartApiFp = function(configuration?: Configuration) {
         },
         /**
          * 
+         * @summary Merge anonymous cart items into current customer cart
+         * @param {MergeCartItemsRequest} mergeCartItemsRequest Anonymous cart merge payload
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async mergeCartItems(mergeCartItemsRequest: MergeCartItemsRequest, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<MergeCartItems200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.mergeCartItems(mergeCartItemsRequest, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['CartApi.mergeCartItems']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
+        /**
+         * 
          * @summary Update cart item data
          * @param {number} cartItemId Cart item ID
          * @param {UpdateCartItemRequest} updateCartItemRequest Cart item update payload
@@ -610,6 +666,16 @@ export const CartApiFactory = function (configuration?: Configuration, basePath?
         },
         /**
          * 
+         * @summary Merge anonymous cart items into current customer cart
+         * @param {CartApiMergeCartItemsRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        mergeCartItems(requestParameters: CartApiMergeCartItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<MergeCartItems200Response> {
+            return localVarFp.mergeCartItems(requestParameters.mergeCartItemsRequest, options).then((request) => request(axios, basePath));
+        },
+        /**
+         * 
          * @summary Update cart item data
          * @param {CartApiUpdateCartItemRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
@@ -697,6 +763,15 @@ export interface CartApiInterface {
      * @throws {RequiredError}
      */
     listCartItems(requestParameters?: CartApiListCartItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateDnsRecord200Response>;
+
+    /**
+     * 
+     * @summary Merge anonymous cart items into current customer cart
+     * @param {CartApiMergeCartItemsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    mergeCartItems(requestParameters: CartApiMergeCartItemsRequest, options?: RawAxiosRequestConfig): AxiosPromise<MergeCartItems200Response>;
 
     /**
      * 
@@ -796,6 +871,16 @@ export interface CartApiListCartItemsRequest {
      * Response language
      */
     readonly lang?: string
+}
+
+/**
+ * Request parameters for mergeCartItems operation in CartApi.
+ */
+export interface CartApiMergeCartItemsRequest {
+    /**
+     * Anonymous cart merge payload
+     */
+    readonly mergeCartItemsRequest: MergeCartItemsRequest
 }
 
 /**
@@ -902,6 +987,17 @@ export class CartApi extends BaseAPI implements CartApiInterface {
      */
     public listCartItems(requestParameters: CartApiListCartItemsRequest = {}, options?: RawAxiosRequestConfig) {
         return CartApiFp(this.configuration).listCartItems(requestParameters.cname, requestParameters.lang, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Merge anonymous cart items into current customer cart
+     * @param {CartApiMergeCartItemsRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public mergeCartItems(requestParameters: CartApiMergeCartItemsRequest, options?: RawAxiosRequestConfig) {
+        return CartApiFp(this.configuration).mergeCartItems(requestParameters.mergeCartItemsRequest, options).then((request) => request(this.axios, this.basePath));
     }
 
     /**

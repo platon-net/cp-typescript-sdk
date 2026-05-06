@@ -11,6 +11,7 @@ All URIs are relative to *https://setup.platon.sk/api*
 |[**getCartCoupon**](#getcartcoupon) | **GET** /cart/coupons/current | Get current cart coupon|
 |[**getCartTotal**](#getcarttotal) | **GET** /cart/total | Get cart total|
 |[**listCartItems**](#listcartitems) | **GET** /cart/items | List cart items|
+|[**mergeCartItems**](#mergecartitems) | **POST** /cart/items/merge | Merge anonymous cart items into current customer cart|
 |[**updateCartItem**](#updatecartitem) | **PATCH** /cart/items/{cartItemId} | Update cart item data|
 |[**updateCartItemCount**](#updatecartitemcount) | **PATCH** /cart/items/by-product/count | Update cart item count by product and domain|
 
@@ -369,6 +370,60 @@ const { status, data } = await apiInstance.listCartItems(
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 |**200** | Cart item list response |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **mergeCartItems**
+> MergeCartItems200Response mergeCartItems(mergeCartItemsRequest)
+
+
+### Example
+
+```typescript
+import {
+    CartApi,
+    Configuration,
+    MergeCartItemsRequest
+} from '@platon-net/cp-typescript-sdk';
+
+const configuration = new Configuration();
+const apiInstance = new CartApi(configuration);
+
+let mergeCartItemsRequest: MergeCartItemsRequest; //Anonymous cart merge payload
+
+const { status, data } = await apiInstance.mergeCartItems(
+    mergeCartItemsRequest
+);
+```
+
+### Parameters
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **mergeCartItemsRequest** | **MergeCartItemsRequest**| Anonymous cart merge payload | |
+
+
+### Return type
+
+**MergeCartItems200Response**
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+|**200** | Cart merge response |  -  |
+|**400** | Missing or invalid from_token |  -  |
+|**401** | Missing or invalid customer Bearer token |  -  |
+|**500** | Internal cart merge error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

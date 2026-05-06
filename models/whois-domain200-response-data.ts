@@ -13,14 +13,16 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { WhoisDomain200ResponseDataRetval } from './whois-domain200-response-data-retval';
 
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface WhoisDomain200ResponseData {
+    'domain'?: string;
+    'isFree'?: boolean;
+    'isPremium'?: boolean;
+    'result'?: number;
+    'retval'?: WhoisDomain200ResponseDataRetval | null;
+    'prices'?: object | null;
+}
 

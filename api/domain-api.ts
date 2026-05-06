@@ -31,6 +31,8 @@ import type { ListDomains200Response } from '../models';
 import type { RegisterDomainRequest } from '../models';
 // @ts-ignore
 import type { RenewDomainRequest } from '../models';
+// @ts-ignore
+import type { WhoisDomain200Response } from '../models';
 /**
  * DomainApi - axios parameter creator
  */
@@ -292,6 +294,54 @@ export const DomainApiAxiosParamCreator = function (configuration?: Configuratio
                 options: localVarRequestOptions,
             };
         },
+        /**
+         * 
+         * @summary Check domain WHOIS availability and prices
+         * @param {string} domain Domain name
+         * @param {string} [cname] Customer name for price context
+         * @param {string} [currencyId] Currency ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        whoisDomain: async (domain: string, cname?: string, currencyId?: string, options: RawAxiosRequestConfig = {}): Promise<RequestArgs> => {
+            // verify required parameter 'domain' is not null or undefined
+            assertParamExists('whoisDomain', 'domain', domain)
+            const localVarPath = `/domains/{domain}/whois`
+                .replace(`{${"domain"}}`, encodeURIComponent(String(domain)));
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'GET', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+            // authentication bearerAuth required
+            // http bearer authentication required
+            await setBearerAuthToObject(localVarHeaderParameter, configuration)
+
+            if (cname !== undefined) {
+                localVarQueryParameter['cname'] = cname;
+            }
+
+            if (currencyId !== undefined) {
+                localVarQueryParameter['currency_id'] = currencyId;
+            }
+
+            localVarHeaderParameter['Accept'] = 'application/json';
+
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
     }
 };
 
@@ -384,6 +434,21 @@ export const DomainApiFp = function(configuration?: Configuration) {
             const localVarOperationServerBasePath = operationServerMap['DomainApi.renewDomain']?.[localVarOperationServerIndex]?.url;
             return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
         },
+        /**
+         * 
+         * @summary Check domain WHOIS availability and prices
+         * @param {string} domain Domain name
+         * @param {string} [cname] Customer name for price context
+         * @param {string} [currencyId] Currency ID
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async whoisDomain(domain: string, cname?: string, currencyId?: string, options?: RawAxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<WhoisDomain200Response>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.whoisDomain(domain, cname, currencyId, options);
+            const localVarOperationServerIndex = configuration?.serverIndex ?? 0;
+            const localVarOperationServerBasePath = operationServerMap['DomainApi.whoisDomain']?.[localVarOperationServerIndex]?.url;
+            return (axios, basePath) => createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration)(axios, localVarOperationServerBasePath || basePath);
+        },
     }
 };
 
@@ -453,6 +518,16 @@ export const DomainApiFactory = function (configuration?: Configuration, basePat
         renewDomain(requestParameters: DomainApiRenewDomainRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateDnsRecord200Response> {
             return localVarFp.renewDomain(requestParameters.domain, requestParameters.renewDomainRequest, options).then((request) => request(axios, basePath));
         },
+        /**
+         * 
+         * @summary Check domain WHOIS availability and prices
+         * @param {DomainApiWhoisDomainRequest} requestParameters Request parameters.
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        whoisDomain(requestParameters: DomainApiWhoisDomainRequest, options?: RawAxiosRequestConfig): AxiosPromise<WhoisDomain200Response> {
+            return localVarFp.whoisDomain(requestParameters.domain, requestParameters.cname, requestParameters.currencyId, options).then((request) => request(axios, basePath));
+        },
     };
 };
 
@@ -513,6 +588,15 @@ export interface DomainApiInterface {
      * @throws {RequiredError}
      */
     renewDomain(requestParameters: DomainApiRenewDomainRequest, options?: RawAxiosRequestConfig): AxiosPromise<CreateDnsRecord200Response>;
+
+    /**
+     * 
+     * @summary Check domain WHOIS availability and prices
+     * @param {DomainApiWhoisDomainRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    whoisDomain(requestParameters: DomainApiWhoisDomainRequest, options?: RawAxiosRequestConfig): AxiosPromise<WhoisDomain200Response>;
 
 }
 
@@ -602,6 +686,26 @@ export interface DomainApiRenewDomainRequest {
 }
 
 /**
+ * Request parameters for whoisDomain operation in DomainApi.
+ */
+export interface DomainApiWhoisDomainRequest {
+    /**
+     * Domain name
+     */
+    readonly domain: string
+
+    /**
+     * Customer name for price context
+     */
+    readonly cname?: string
+
+    /**
+     * Currency ID
+     */
+    readonly currencyId?: string
+}
+
+/**
  * DomainApi - object-oriented interface
  */
 export class DomainApi extends BaseAPI implements DomainApiInterface {
@@ -669,6 +773,17 @@ export class DomainApi extends BaseAPI implements DomainApiInterface {
      */
     public renewDomain(requestParameters: DomainApiRenewDomainRequest, options?: RawAxiosRequestConfig) {
         return DomainApiFp(this.configuration).renewDomain(requestParameters.domain, requestParameters.renewDomainRequest, options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * 
+     * @summary Check domain WHOIS availability and prices
+     * @param {DomainApiWhoisDomainRequest} requestParameters Request parameters.
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     */
+    public whoisDomain(requestParameters: DomainApiWhoisDomainRequest, options?: RawAxiosRequestConfig) {
+        return DomainApiFp(this.configuration).whoisDomain(requestParameters.domain, requestParameters.cname, requestParameters.currencyId, options).then((request) => request(this.axios, this.basePath));
     }
 }
 

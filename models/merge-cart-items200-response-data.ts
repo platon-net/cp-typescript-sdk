@@ -14,13 +14,13 @@
 
 
 
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface MergeCartItems200ResponseData {
+    'status'?: string;
+    'merged'?: boolean;
+    'from_cname'?: string;
+    'to_cname'?: string;
+    'moved_items'?: number;
+    'merged_items'?: number;
+    'items_count'?: number;
+}
 

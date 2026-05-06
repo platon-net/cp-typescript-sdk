@@ -14,13 +14,7 @@
 
 
 
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface MergeCartItemsRequest {
+    'from_token': string;
+}
 

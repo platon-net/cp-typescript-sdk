@@ -13,14 +13,15 @@
  */
 
 
+// May contain unused imports in some cases
+// @ts-ignore
+import type { SpamDetection200ResponseData } from './spam-detection200-response-data';
 
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface SpamDetection200Response {
+    'status': string;
+    'retval': number;
+    'msg': string;
+    'data': SpamDetection200ResponseData;
+    'requestId': number;
+}
 
