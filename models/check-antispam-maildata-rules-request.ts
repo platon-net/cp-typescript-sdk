@@ -14,14 +14,10 @@
 
 
 
-export * from './api/antispam-api';
-export * from './api/auth-api';
-export * from './api/cart-api';
-export * from './api/dnsapi';
-export * from './api/domain-api';
-export * from './api/email-api';
-export * from './api/llmapi';
-export * from './api/oauth-api';
-export * from './api/system-api';
-export * from './api/vehicle-api';
+export interface CheckAntispamMaildataRulesRequest {
+    /**
+     * Structured mail metadata with sender/recipient/email/domain/ip fields.
+     */
+    'maildata': { [key: string]: any; };
+}
 

@@ -2,6 +2,7 @@
 .npmignore
 README.md
 api.ts
+api/antispam-api.ts
 api/auth-api.ts
 api/cart-api.ts
 api/dnsapi.ts
@@ -14,11 +15,15 @@ api/vehicle-api.ts
 base.ts
 common.ts
 configuration.ts
+docs/AddAntispamMaildataRequest.md
+docs/AntispamApi.md
 docs/AuthApi.md
 docs/CartApi.md
 docs/ChangeDomainNameserversRequest.md
 docs/ChangeMailboxPasswordRequest.md
+docs/CheckAntispamMaildataRulesRequest.md
 docs/CheckCartCouponRequest.md
+docs/CreateAntispamEmailRuleRequest.md
 docs/CreateAuthToken200Response.md
 docs/CreateAuthToken200ResponseData.md
 docs/CreateCartItemRequest.md
@@ -76,9 +81,12 @@ docs/WhoisDomain200ResponseData.md
 docs/WhoisDomain200ResponseDataRetval.md
 git_push.sh
 index.ts
+models/add-antispam-maildata-request.ts
 models/change-domain-nameservers-request.ts
 models/change-mailbox-password-request.ts
+models/check-antispam-maildata-rules-request.ts
 models/check-cart-coupon-request.ts
+models/create-antispam-email-rule-request.ts
 models/create-auth-token200-response-data.ts
 models/create-auth-token200-response.ts
 models/create-cart-item-request.ts
